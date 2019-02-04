@@ -3,10 +3,15 @@ package com.example.saurabh.driver.fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputLayout;
@@ -234,7 +239,8 @@ public class DashboardFragment extends Fragment implements View.OnClickListener,
         mMap = googleMap;
         LatLng sydney = new LatLng(lat, lang1);
         MarkerOptions marker = new MarkerOptions().position(sydney);
-        marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.drop_loc));
+        marker.icon(BitmapDescriptorFactory.fromBitmap(getMarkerBitmapFromView(R.drawable.drop_loc)));
+
         googleMap.addMarker(marker);
         CameraPosition cameraPosition = new CameraPosition.Builder().target(
                 sydney).zoom(25).build();
@@ -510,7 +516,8 @@ public class DashboardFragment extends Fragment implements View.OnClickListener,
     private void drawMarker(LatLng point, String text) {
 
         MarkerOptions markerOptions = new MarkerOptions();
-        markerOptions.position(point).title(text).icon(BitmapDescriptorFactory.fromResource(R.drawable.drop_loc));
+        markerOptions.position(point).title(text).icon(BitmapDescriptorFactory.fromBitmap(getMarkerBitmapFromView(R.drawable.drop_loc)));
+
         mMap.addMarker(markerOptions);
         builder.include(markerOptions.getPosition());
 
@@ -519,10 +526,29 @@ public class DashboardFragment extends Fragment implements View.OnClickListener,
     private void drawMarker1(LatLng point, String text) {
 
         MarkerOptions markerOptions = new MarkerOptions();
-        markerOptions.position(point).title(text).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_green));
+        markerOptions.position(point).title(text).icon(BitmapDescriptorFactory.fromBitmap(getMarkerBitmapFromView(R.drawable.ic_green)));
+
         mMap.addMarker(markerOptions);
         builder.include(markerOptions.getPosition());
 
+    }
+    private Bitmap getMarkerBitmapFromView(@DrawableRes int resId) {
+
+        View customMarkerView = ((LayoutInflater)getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.row_item_custom_marker, null);
+        ImageView markerImageView = (ImageView) customMarkerView.findViewById(R.id.profile_image);
+        markerImageView.setImageResource(resId);
+        customMarkerView.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
+        customMarkerView.layout(0, 0, customMarkerView.getMeasuredWidth(), customMarkerView.getMeasuredHeight());
+        customMarkerView.buildDrawingCache();
+        Bitmap returnedBitmap = Bitmap.createBitmap(customMarkerView.getMeasuredWidth(), customMarkerView.getMeasuredHeight(),
+                Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(returnedBitmap);
+        canvas.drawColor(Color.WHITE, PorterDuff.Mode.SRC_IN);
+        Drawable drawable = customMarkerView.getBackground();
+        if (drawable != null)
+            drawable.draw(canvas);
+        customMarkerView.draw(canvas);
+        return returnedBitmap;
     }
 
 }
