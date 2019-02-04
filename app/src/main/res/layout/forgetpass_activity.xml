@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    >
+    <ScrollView
+        android:id="@+id/login_form"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+        <LinearLayout
+            android:id="@+id/email_login_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:background="@color/toolbar"
+                android:layout_height="40dp">
+
+                <com.example.saurabh.driver.customtext.TextViewBold
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Forgot Password"
+                    android:textColor="@color/black"
+                    android:layout_centerInParent="true"
+                    android:textSize="14dp"
+                    />
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/back"
+                    android:id="@+id/back"
+                    android:layout_margin="5dp"
+                    />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="50dp"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/txtInputemail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:focusableInTouchMode="false"
+                    android:textColorHint="@color/txt_grey"
+                    app:backgroundTint="@color/txt_grey"
+                    app:hintTextAppearance="@style/TextInputLayout">
+                    <EditText
+                        android:id="@+id/et_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="4dp"
+                        android:hint="Email Address"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:theme="@style/Theme.App.Base"
+
+                        android:drawableLeft="@drawable/email_bg"
+                        app:backgroundTint="@color/txt_grey" />
+                </android.support.design.widget.TextInputLayout>
+
+            </RelativeLayout>
+
+            <com.example.saurabh.driver.customtext.ButtonBold
+                android:id="@+id/submitbtn"
+                style="?android:textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/login_button_bg"
+                android:text="Submit"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:indeterminateTint="@color/progress_color"
+        android:visibility="gone" />
+
+</RelativeLayout>

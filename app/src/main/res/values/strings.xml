@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">BantuLiftDriver</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="hint_email_phone">Username</string>
+    <string name="hint_password">Password</string>
+    <string name="txt_forgot_password">Forgot Password?</string>
+    <string name="txt_sigup">Don’t have an account ? Sign Up</string>
+    <string name="try_again">Please try again!!!</string>
+    <string name="no_connection">No Internet Connection</string>
+    <string name="forgot_password">Forgot Password ?</string>
+    <string name="or">Or</string>
+    <string name="don_t_have_an_account_register_now">Don\'t have an account ?</string>
+    <string name="type_password">Type Password</string>
+    <string name="set_your_n_password">Set your  \nPassword</string>
+    <string name="action_sign_in">Login</string>
+
+</resources>
