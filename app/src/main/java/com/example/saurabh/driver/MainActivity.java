@@ -29,9 +29,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.saurabh.driver.adapter.GetLiftAdapter;
+import com.example.saurabh.driver.constant.CommonMeathod;
 import com.example.saurabh.driver.constant.FunctionHelper;
 import com.example.saurabh.driver.fragment.DashboardFragment;
 import com.example.saurabh.driver.fragment.GetLiftFragment;
+import com.example.saurabh.driver.fragment.NotificationFragment;
 import com.example.saurabh.driver.fragment.RequestPollFragment;
 import com.example.saurabh.driver.interFace.FragmentInterface;
 import com.example.saurabh.driver.modelclass.LogoutModelclass.LogoutModelclass;
@@ -175,6 +177,8 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_createdLift) {
             addFragment(GetLiftFragment.newInstance("", ""), "Dashboard");
+        } else if (id == R.id.nav_notification) {
+            addFragment(NotificationFragment.newInstance("", ""), "Notification");
         } else if (id == R.id.nav_logout) {
             openDialog();
         }
@@ -250,7 +254,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onBackPressed() {
         View view = findViewById(android.R.id.content);
-
+        CommonMeathod.hideKeyboard(MainActivity.this);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {

@@ -45,7 +45,9 @@
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait"
-          >
+            android:windowSoftInputMode="stateHidden|adjustResize"
+
+            >
 
         </activity><activity
             android:name=".activity.UploadLicenceActivity"

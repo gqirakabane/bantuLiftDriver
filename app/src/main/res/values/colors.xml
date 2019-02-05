@@ -12,6 +12,7 @@
     <color name="product_list_bg_color">#FEFAFA</color>
     <color name="create_post_bg_color">#FEFAFA</color>
     <color name="likeBlack">#cb000000</color>
+    <color name="green_color">#65C97A</color>
 
     <color name="txt_grey">#9a9595</color>
     <color name="txt_grey1">#c5c5c5</color>

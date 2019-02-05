@@ -18,6 +18,10 @@
             android:icon="@drawable/car_lft"
             android:title="Created Lift" />
         <item
+            android:id="@+id/nav_notification"
+            android:icon="@drawable/ic_notification"
+            android:title="Notifications" />
+        <item
             android:id="@+id/nav_logout"
             android:icon="@drawable/logout"
             android:title="Logout" />
