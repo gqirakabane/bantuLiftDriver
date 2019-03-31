@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 
 public class FunctionHelper {
+    String abc;
     private static ProgressDialog dialog;
     public  static void showDialog(Context context,String msg)
     {
