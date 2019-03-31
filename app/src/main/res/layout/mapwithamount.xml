@@ -27,7 +27,7 @@
             android:background="@drawable/map_bg"
             android:orientation="vertical"
             android:padding="20dp">
-            <com.example.saurabh.driver.customtext.TextViewRegular
+            <com.bantu.lift.driver.customtext.TextViewRegular
                 android:layout_width="70dp"
                 android:layout_height="30dp"
                 android:text="Now"
@@ -41,7 +41,7 @@
 
                 />
 
-            <com.example.saurabh.driver.customtext.TextViewRegular
+            <com.bantu.lift.driver.customtext.TextViewRegular
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Select time to create car lift"
@@ -88,7 +88,7 @@
         android:id="@+id/cotinuelift"
         android:gravity="center">
 
-        <com.example.saurabh.driver.customtext.TextViewBold
+        <com.bantu.lift.driver.customtext.TextViewBold
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

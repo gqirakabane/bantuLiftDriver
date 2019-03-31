@@ -17,7 +17,7 @@
         android:singleLine="true"
         android:textColor="@color/colorAccent"
         android:textSize="16sp" />-->
-    <com.example.saurabh.driver.customtext.TextViewRegular
+    <com.bantu.lift.driver.customtext.TextViewRegular
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/text_spinnerDropdown"

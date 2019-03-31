@@ -7,6 +7,15 @@
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
-
+    <com.bantu.lift.driver.customtext.TextViewRegular
+        android:id="@+id/noRecard"
+        android:layout_width="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"
+        android:text="There is no requests"
+        android:layout_marginRight="10dp"
+        android:textSize="15sp" />
 
 </RelativeLayout>

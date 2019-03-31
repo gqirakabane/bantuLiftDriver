@@ -18,7 +18,7 @@
                 android:layout_height="60dp"
                 android:background="@color/toolbar">
 
-                <com.example.saurabh.driver.customtext.TextViewBold
+                <com.bantu.lift.driver.customtext.TextViewBold
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
@@ -58,7 +58,7 @@
                 android:layout_height="100dp"
                 android:layout_centerVertical="true"
                 android:src="@drawable/upload" />
-            <com.example.saurabh.driver.customtext.TextViewRegular
+            <com.bantu.lift.driver.customtext.TextViewRegular
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Upload Photo"
@@ -104,7 +104,7 @@
                         app:backgroundTint="@color/txt_grey" />
 
                 </android.support.design.widget.TextInputLayout>
-                <com.example.saurabh.driver.customtext.ButtonBold
+                <com.bantu.lift.driver.customtext.ButtonBold
                     android:id="@+id/browseId"
                     style="?android:textAppearanceSmall"
                     android:layout_width="90dp"
@@ -147,7 +147,7 @@
                         app:backgroundTint="@color/txt_grey" />
 
                 </android.support.design.widget.TextInputLayout>
-                <com.example.saurabh.driver.customtext.ButtonBold
+                <com.bantu.lift.driver.customtext.ButtonBold
                     android:id="@+id/browseLicense"
                     style="?android:textAppearanceSmall"
                     android:layout_width="90dp"
@@ -168,7 +168,7 @@
             android:layout_height="0dp"
             android:gravity="center"
             android:layout_weight="0.25">
-            <com.example.saurabh.driver.customtext.ButtonBold
+            <com.bantu.lift.driver.customtext.ButtonBold
                 android:id="@+id/finishBtn"
                 style="?android:textAppearanceSmall"
                 android:layout_width="match_parent"

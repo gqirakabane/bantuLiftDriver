@@ -56,6 +56,7 @@
                         android:hint="Pick City"
                         android:inputType="textEmailAddress"
                         android:maxLines="1"
+                        android:textSize="16sp"
                         app:backgroundTint="@color/txt_grey" />
 
                 </android.support.design.widget.TextInputLayout>
@@ -97,8 +98,10 @@
                         android:drawableLeft="@drawable/dropbg"
                         android:drawablePadding="4dp"
                         android:hint="Drop City"
-                        android:inputType="textEmailAddress"
+                        android:inputType="none"
                         android:maxLines="1"
+                        android:textSize="16sp"
+
                         app:backgroundTint="@color/txt_grey" />
 
                 </android.support.design.widget.TextInputLayout>
@@ -115,7 +118,7 @@
         android:background="@color/toolbar"
         android:gravity="center">
 
-        <com.example.saurabh.driver.customtext.TextViewBold
+        <com.bantu.lift.driver.customtext.TextViewBold
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

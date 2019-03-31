@@ -27,7 +27,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
-                    <com.example.saurabh.driver.customtext.TextViewBold
+                    <com.bantu.lift.driver.customtext.TextViewBold
                         android:id="@+id/carName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -35,13 +35,13 @@
                         android:textColor="@color/black"
                         android:textSize="15sp" />
 
-                    <com.example.saurabh.driver.customtext.TextViewRegular
+                    <com.bantu.lift.driver.customtext.TextViewRegular
                         android:id="@+id/tv_car_name_divider"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text=" | " />
 
-                    <com.example.saurabh.driver.customtext.TextViewBold
+                    <com.bantu.lift.driver.customtext.TextViewBold
                         android:id="@+id/carNumber"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -79,7 +79,7 @@
                 android:layout_alignParentRight="true"
                 android:orientation="horizontal">
 
-                <com.example.saurabh.driver.customtext.TextViewRegular
+                <com.bantu.lift.driver.customtext.TextViewRegular
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Smoking"
@@ -88,7 +88,7 @@
 
                     android:textSize="15sp" />
 
-                <com.example.saurabh.driver.customtext.TextViewRegular
+                <com.bantu.lift.driver.customtext.TextViewRegular
                     android:id="@+id/tv_smoking_divider"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -97,7 +97,7 @@
 
                     android:textSize="15sp" />
 
-                <com.example.saurabh.driver.customtext.TextViewRegular
+                <com.bantu.lift.driver.customtext.TextViewRegular
                     android:id="@+id/luggage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -113,7 +113,7 @@
                 android:layout_marginTop="10dp"
                 android:orientation="horizontal">
 
-                <com.example.saurabh.driver.customtext.TextViewRegular
+                <com.bantu.lift.driver.customtext.TextViewRegular
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Seat "
@@ -121,14 +121,14 @@
                     android:textColor="@color/warm_grey"
                     android:textSize="14sp" />
 
-                <com.example.saurabh.driver.customtext.TextViewRegular
+                <com.bantu.lift.driver.customtext.TextViewRegular
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=" : "
                     android:textColor="@color/pinkish_grey"
                     android:textSize="14sp" />
 
-                <com.example.saurabh.driver.customtext.TextViewRegular
+                <com.bantu.lift.driver.customtext.TextViewRegular
                     android:id="@+id/passerger"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -146,7 +146,7 @@
                 android:layout_marginTop="10dp"
                 android:orientation="horizontal">
 
-                <com.example.saurabh.driver.customtext.TextViewRegular
+                <com.bantu.lift.driver.customtext.TextViewRegular
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Price "
@@ -154,14 +154,14 @@
                     android:textColor="@color/warm_grey"
                     android:textSize="14sp" />
 
-                <com.example.saurabh.driver.customtext.TextViewRegular
+                <com.bantu.lift.driver.customtext.TextViewRegular
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=" : "
                     android:textColor="@color/pinkish_grey"
                     android:textSize="14sp" />
 
-                <com.example.saurabh.driver.customtext.TextViewRegular
+                <com.bantu.lift.driver.customtext.TextViewRegular
                     android:id="@+id/price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -183,7 +183,7 @@
 
                 android:orientation="horizontal">
 
-                <com.example.saurabh.driver.customtext.TextViewRegular
+                <com.bantu.lift.driver.customtext.TextViewRegular
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Start Date"
@@ -191,7 +191,7 @@
 
                     android:textSize="14sp" />
 
-                <com.example.saurabh.driver.customtext.TextViewRegular
+                <com.bantu.lift.driver.customtext.TextViewRegular
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=" : "
@@ -199,7 +199,7 @@
 
                     android:textSize="14sp" />
 
-                <com.example.saurabh.driver.customtext.TextViewRegular
+                <com.bantu.lift.driver.customtext.TextViewRegular
                     android:id="@+id/startdate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -218,7 +218,7 @@
                 android:layout_marginTop="5dp"
                 android:orientation="horizontal">
 
-                <com.example.saurabh.driver.customtext.TextViewRegular
+                <com.bantu.lift.driver.customtext.TextViewRegular
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Start Location "
@@ -226,14 +226,14 @@
                     android:textColor="@color/warm_grey"
                     android:textSize="14sp" />
 
-                <com.example.saurabh.driver.customtext.TextViewRegular
+                <com.bantu.lift.driver.customtext.TextViewRegular
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=" : "
 
                     android:textSize="14sp" />
 
-                <com.example.saurabh.driver.customtext.TextViewRegular
+                <com.bantu.lift.driver.customtext.TextViewRegular
                     android:id="@+id/startLocation"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -252,7 +252,7 @@
                 android:layout_marginTop="5dp"
                 android:orientation="horizontal">
 
-                <com.example.saurabh.driver.customtext.TextViewRegular
+                <com.bantu.lift.driver.customtext.TextViewRegular
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="End Address"
@@ -260,7 +260,7 @@
 
                     android:textSize="14sp" />
 
-                <com.example.saurabh.driver.customtext.TextViewRegular
+                <com.bantu.lift.driver.customtext.TextViewRegular
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=" : "
@@ -268,7 +268,7 @@
                     android:textColor="@color/pinkish_grey"
                     android:textSize="14sp" />
 
-                <com.example.saurabh.driver.customtext.TextViewRegular
+                <com.bantu.lift.driver.customtext.TextViewRegular
                     android:id="@+id/endLocation"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

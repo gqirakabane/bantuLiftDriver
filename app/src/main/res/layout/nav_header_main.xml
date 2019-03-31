@@ -20,7 +20,7 @@
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         app:srcCompat="@drawable/profile" />
 
-    <com.example.saurabh.driver.customtext.TextViewBold
+    <com.bantu.lift.driver.customtext.TextViewBold
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="5dp"
@@ -30,7 +30,7 @@
         android:textColor="@color/black"
          />
 
-    <com.example.saurabh.driver.customtext.TextViewRegular
+    <com.bantu.lift.driver.customtext.TextViewRegular
         android:id="@+id/mobileNo"
 
         android:layout_width="wrap_content"

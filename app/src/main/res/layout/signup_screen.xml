@@ -23,7 +23,7 @@
                 android:layout_height="60dp"
                 android:background="@color/toolbar">
 
-                <com.example.saurabh.driver.customtext.TextViewBold
+                <com.bantu.lift.driver.customtext.TextViewBold
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
@@ -349,7 +349,7 @@
 
             </RelativeLayout>
 
-            <com.example.saurabh.driver.customtext.ButtonBold
+            <com.bantu.lift.driver.customtext.ButtonBold
                 android:id="@+id/signupBtn"
                 style="?android:textAppearanceSmall"
                 android:layout_width="match_parent"
@@ -371,7 +371,7 @@
                 android:gravity="center"
                 android:orientation="horizontal">
 
-                <com.example.saurabh.driver.customtext.TextViewRegular
+                <com.bantu.lift.driver.customtext.TextViewRegular
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -379,7 +379,7 @@
                     android:text="@string/don_t_have_an_account_register_now"
                     android:textSize="16sp" />
 
-                <com.example.saurabh.driver.customtext.TextViewRegular
+                <com.bantu.lift.driver.customtext.TextViewRegular
                     android:id="@+id/tv_gotologin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

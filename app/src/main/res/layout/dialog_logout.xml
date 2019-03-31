@@ -6,7 +6,7 @@
     android:minWidth="250dp"
     android:orientation="vertical">
 
-    <com.example.saurabh.driver.customtext.TextViewRegular
+    <com.bantu.lift.driver.customtext.TextViewRegular
         android:id="@+id/text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

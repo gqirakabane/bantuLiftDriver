@@ -25,7 +25,7 @@
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
     <style name="TextInputLayout" parent="@android:style/TextAppearance">
         <item name="android:textColor">@color/txt_grey</item>
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">16sp</item>
         <item name="colorPrimary">@color/txt_grey</item>
         <item name="colorPrimaryDark">@color/txt_grey</item>
         <item name="colorAccent">@color/txt_grey</item>
