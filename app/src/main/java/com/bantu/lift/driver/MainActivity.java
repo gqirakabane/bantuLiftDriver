@@ -12,6 +12,8 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -28,6 +30,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bantu.lift.driver.activity.LoginActivity;
 import com.bantu.lift.driver.constant.CommonMeathod;
 import com.bantu.lift.driver.constant.FunctionHelper;
 import com.bantu.lift.driver.fragment.DashboardFragment;
@@ -148,6 +151,8 @@ public class MainActivity extends AppCompatActivity
         });
         updateToken();
     }
+
+
 
 
     @Override
@@ -331,7 +336,7 @@ public class MainActivity extends AppCompatActivity
                         sharedPreferences.edit().putString(SharedPreferenceConstants.fcmId, refreshedToken).apply();
 
                         Intent i1 = new Intent();
-                        i1.setClassName("com.example.saurabh.driver", "com.example.saurabh.driver.activity.LoginActivity");
+                        i1.setClassName("com.bantu.lift.driver", "com.bantu.lift.driver.activity.LoginActivity");
                         i1.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(i1);
 
@@ -354,7 +359,7 @@ public class MainActivity extends AppCompatActivity
                         sharedPreferences.edit().putString(SharedPreferenceConstants.fcmId, refreshedToken).apply();
 
                         Intent i1 = new Intent();
-                        i1.setClassName("com.example.saurabh.driver", "com.example.saurabh.driver.activity.LoginActivity");
+                        i1.setClassName("com.bantu.lift.driver", "com.bantu.lift.driver.activity.LoginActivity");
                         i1.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(i1);
 
@@ -377,6 +382,15 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onResume() {
         super.onResume();
+        Integer buildVersion=sharedPreferences.getInt(SharedPreferenceConstants.buildVersion,0);
+        Integer currentVersion=BuildConfig.VERSION_CODE;
+        Log.e("cVersion---",""+buildVersion+" cureentVersion"+currentVersion);
+
+        if(buildVersion==0||buildVersion<currentVersion)
+        {
+            startActivity(new Intent(this, LoginActivity.class));
+            finish();
+        }
 
     }
 

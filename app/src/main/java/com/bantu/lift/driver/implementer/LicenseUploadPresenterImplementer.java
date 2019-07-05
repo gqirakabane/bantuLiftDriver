@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.bantu.lift.driver.BuildConfig;
 import com.bantu.lift.driver.MainActivity;
 import com.bantu.lift.driver.R;
 import com.bantu.lift.driver.activity.SignupScreen;
@@ -267,6 +268,8 @@ public class LicenseUploadPresenterImplementer implements ILicensePresenter {
                             sharedPreferences.edit().putString(SharedPreferenceConstants.serviceKey, response.body().getServiceKey()).apply();
                             sharedPreferences.edit().putString(SharedPreferenceConstants.name, response.body().getData().getName()).apply();
                             sharedPreferences.edit().putString(SharedPreferenceConstants.image, response.body().getData().getImage()).apply();
+                            int buildVersion= BuildConfig.VERSION_CODE;
+                            sharedPreferences.edit().putInt(SharedPreferenceConstants.buildVersion,buildVersion).apply();
 
                             Toast.makeText(context, response.body().getErrorMsg(), Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(context, MainActivity.class);

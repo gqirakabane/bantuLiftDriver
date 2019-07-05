@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.bantu.lift.driver.R;
@@ -119,6 +120,10 @@ public class CreateLiftPresenterImplementer implements ICreateLiftPresenter {
 
                         } else if (status_val == 1) {
                             Toast.makeText(context, response.body().getErrorMsg(), Toast.LENGTH_SHORT).show();
+                        }else if (status_val == 2) {
+                            Toast.makeText(context, "You have already login in other device", Toast.LENGTH_SHORT).show();
+
+                            iCreateLiftPresenter.OnLoginError();
                         }
                     }
                 }
@@ -152,10 +157,12 @@ public class CreateLiftPresenterImplementer implements ICreateLiftPresenter {
         CheckBox checkbox;
 
         EditText et_passerger, et_carName, et_carNumber, et_preferanceType;
+        Spinner spCarType;
         final String email;
         et_passerger = view.findViewById(R.id.et_passerger);
         et_carName = view.findViewById(R.id.et_carName);
         et_carNumber = view.findViewById(R.id.et_carNumber);
+        spCarType=view.findViewById(R.id.spinner_carType);
         et_preferanceType = view.findViewById(R.id.et_preferanceType);
         checkbox = view.findViewById(R.id.sighupCheckbox);
         if (checkbox.isChecked()) {
@@ -169,11 +176,15 @@ public class CreateLiftPresenterImplementer implements ICreateLiftPresenter {
 
                 Toast.makeText(context, "Please upload car photo", Toast.LENGTH_SHORT).show();
 
-            } else if (et_passerger.getText().toString().equalsIgnoreCase("")) {
+            } if (et_passerger.getText().toString().equalsIgnoreCase("")) {
 
-                Toast.makeText(context, "please enter number of passengers", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Please enter number of passengers", Toast.LENGTH_SHORT).show();
 
-            } else if (et_passerger.getText().toString().length() > 9) {
+            } else if (spCarType.getSelectedItemPosition()==0)
+            {
+                Toast.makeText(context, "Please select Driver/Passenger", Toast.LENGTH_SHORT).show();
+
+            }else if (et_passerger.getText().toString().length() > 9) {
 
                 Toast.makeText(context, "Please enter  passengers between 0 to 10", Toast.LENGTH_SHORT).show();
 

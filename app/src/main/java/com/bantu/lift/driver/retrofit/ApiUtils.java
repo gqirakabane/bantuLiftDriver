@@ -5,7 +5,7 @@ package com.bantu.lift.driver.retrofit;
 public class ApiUtils {
 
     private ApiUtils() {}
-    private static final String DEV_URL="http://carpollservice.teachinghub.in/api/v1/";
+    private static final String DEV_URL="http://api.bantub2b.co.za/api/v1/";
     /*
     * BaseUrl of this application
     * */

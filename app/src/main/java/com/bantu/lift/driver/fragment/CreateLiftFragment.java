@@ -124,6 +124,8 @@ public class CreateLiftFragment extends Fragment implements View.OnClickListener
     String imagepath = "checkdata";
     String carType = "";
     String luggage = "";
+    Datum  datum;
+    Datum bean;
 
     public CreateLiftFragment() {
     }
@@ -392,6 +394,7 @@ public class CreateLiftFragment extends Fragment implements View.OnClickListener
 
     @Override
     public void OnLoginError() {
+        logoutMeathod();
 
     }
 
@@ -447,15 +450,31 @@ public class CreateLiftFragment extends Fragment implements View.OnClickListener
                     FunctionHelper.dismissDialog();
                     int status_val = Integer.parseInt(response.body().getErrorCode());
                     if (status_val == 0) {
-                        cartypeList.addAll(response.body().getData());
+
+
+                        bean = new Datum();
+                        bean.setCarTypeName("Driver/Passenger");
+                        bean.setCarTypeId("");
+                        cartypeList.add(bean);
+                        //cartypeList.addAll(response.body().getData());
+
+
+                        for (int i = 0; i < response.body().getData().size(); i++) {
+                            bean = new Datum();
+
+                            bean.setCarTypeName(response.body().getData().get(i).getCarTypeName());
+                            bean.setCarTypeId(response.body().getData().get(i).getCarTypeId());
+                            cartypeList.add(bean);
+
+                        }
                         // Toast.makeText(context, response.body().getErrorMsg(), Toast.LENGTH_SHORT).show();
-                        carTypeAdapter = new CarTypeAdapter(getActivity(), response.body().getData());
+                        carTypeAdapter = new CarTypeAdapter(getActivity(), cartypeList);
                         spinner_carType.setAdapter(carTypeAdapter);
                         getData();
                     } else if (status_val == 2) {
                         FunctionHelper.dismissDialog();
-
-                        Toast.makeText(getActivity(), response.body().getErrorMsg(), Toast.LENGTH_SHORT).show();
+                        logoutMeathod();
+                        Toast.makeText(getActivity(), "You have already login in other device", Toast.LENGTH_SHORT).show();
 
                     }
                 }
@@ -507,6 +526,27 @@ public class CreateLiftFragment extends Fragment implements View.OnClickListener
         customMarkerView.draw(canvas);
         return returnedBitmap;
     }
+    public  void logoutMeathod()
+    {
 
+        String refreshedToken = sharedPreferences.getString(SharedPreferenceConstants.fcmId, "");
+
+        final SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(SharedPreferenceConstants.email, "");
+        editor.putString(SharedPreferenceConstants.name, "");
+        editor.putString(SharedPreferenceConstants.serviceKey, "");
+        editor.putString(SharedPreferenceConstants.userId, "");
+        editor.putString(SharedPreferenceConstants.homeCity, "");
+        editor.putString(SharedPreferenceConstants.workCity, "");
+        editor.putString(SharedPreferenceConstants.mobile, "");
+        editor.putString(SharedPreferenceConstants.checkPoll, "");
+        editor.clear();
+        editor.commit();
+        sharedPreferences.edit().putString(SharedPreferenceConstants.fcmId, refreshedToken).apply();
+        Intent i1 = new Intent();
+        i1.setClassName("com.bantu.lift.driver", "com.bantu.lift.driver.activity.LoginActivity");
+        i1.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(i1);
+
+    }
 }
-

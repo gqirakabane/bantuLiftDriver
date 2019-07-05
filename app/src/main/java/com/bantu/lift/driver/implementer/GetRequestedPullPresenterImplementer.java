@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -57,6 +58,8 @@ public class GetRequestedPullPresenterImplementer implements IGetRequestedPullPr
 
         FunctionHelper.showDialog(context, "Loading...");
         IRestInterfaces iRestInterfaces = ApiUtils.getAPIService();
+        Log.e("userId---",""+sharedPreferences.getString(SharedPreferenceConstants.userId, ""));
+        Log.e("serviceKey---",""+sharedPreferences.getString(SharedPreferenceConstants.serviceKey, ""));
         Call<RequestPollModel> signInModelclassCall = iRestInterfaces.getRequestedPolls(sharedPreferences.getString(SharedPreferenceConstants.serviceKey, ""), sharedPreferences.getString(SharedPreferenceConstants.userId, ""));
         signInModelclassCall.enqueue(new Callback<RequestPollModel>() {
             @Override
@@ -79,10 +82,10 @@ public class GetRequestedPullPresenterImplementer implements IGetRequestedPullPr
                         }
 
                     } else if (status_val == 2) {
+
                         FunctionHelper.dismissDialog();
-
-                        Toast.makeText(context, response.body().getErrorMsg(), Toast.LENGTH_SHORT).show();
-
+                        Toast.makeText(context, "You have already login in other device", Toast.LENGTH_SHORT).show();
+                        iGetRequestPullView.OnLoginError();
                     }
                 }
             }

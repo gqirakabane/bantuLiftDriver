@@ -2,8 +2,12 @@ package com.bantu.lift.driver.constant;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
+
+import com.bantu.lift.driver.utils.SharedPreferenceConstants;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -14,6 +18,7 @@ import java.util.Date;
  */
 
 public class CommonMeathod {
+    SharedPreferences sharedPreferences;
 
     public static void hideKeyboard(Context context) {
         try {
@@ -39,6 +44,5 @@ public class CommonMeathod {
         }
         return datetime;
     }
-
 
 }

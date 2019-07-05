@@ -13,12 +13,13 @@
         android:name="com.bantu.lift.driver.utils.MyApplication"
 
         android:allowBackup="true"
-        android:icon="@mipmap/bantu_logo_launcher"
+        android:icon="@mipmap/bantulifticon"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/bantu_logo_launcher"
+        android:roundIcon="@mipmap/bantulifticon"
         android:supportsRtl="true"
         android:largeHeap="true"
         android:theme="@style/AppTheme">
+        <uses-library android:name="org.apache.http.legacy" android:required="false" />
         <activity
             android:name="com.bantu.lift.driver.activity.SplashScreen"
             android:label="@string/app_name"

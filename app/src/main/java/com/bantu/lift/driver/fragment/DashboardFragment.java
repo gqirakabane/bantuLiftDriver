@@ -284,8 +284,9 @@ public class DashboardFragment extends Fragment implements View.OnClickListener,
             et_pickup.setCursorVisible(true);
             et_pickup.requestFocus();
         }
-        MainActivity.tootlbarheader.setVisibility(View.VISIBLE);
-        MainActivity.text_toolbarTitle.setVisibility(View.GONE);
+        MainActivity.tootlbarheader.setVisibility(View.GONE);
+        MainActivity.text_toolbarTitle.setVisibility(View.VISIBLE);
+        MainActivity.text_toolbarTitle.setText("Bantu Lift");
         if (sharedPreferences.getString(SharedPreferenceConstants.checkPoll, "").equalsIgnoreCase("1")) {
             getActivity().onBackPressed();
         }

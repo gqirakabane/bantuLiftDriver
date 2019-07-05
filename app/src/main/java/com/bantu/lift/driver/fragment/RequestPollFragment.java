@@ -1,5 +1,8 @@
 package com.bantu.lift.driver.fragment;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -17,6 +20,7 @@ import com.bantu.lift.driver.R;
 import com.bantu.lift.driver.adapter.GetRequestPullAdapter;
 import com.bantu.lift.driver.implementer.GetRequestedPullPresenterImplementer;
 import com.bantu.lift.driver.interFace.AdapterCallback;
+import com.bantu.lift.driver.utils.SharedPreferenceConstants;
 import com.bantu.lift.driver.view.IGetRequestPullView;
 
 public class RequestPollFragment extends Fragment implements View.OnClickListener, IGetRequestPullView,AdapterCallback {
@@ -29,6 +33,8 @@ public class RequestPollFragment extends Fragment implements View.OnClickListene
     private String mParam1;
     private String mParam2;
 TextView noRecard;
+    SharedPreferences sharedPreferences;
+
     public RequestPollFragment() {
     }
 
@@ -63,6 +69,7 @@ TextView noRecard;
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         recycler_view = view.findViewById(R.id.recycler_view);
+        sharedPreferences = getActivity().getApplication().getSharedPreferences(SharedPreferenceConstants.PREF, Context.MODE_PRIVATE);
         LinearLayoutManager llm = new LinearLayoutManager(getContext());
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         recycler_view.setLayoutManager(llm);
@@ -95,7 +102,7 @@ TextView noRecard;
 
     @Override
     public void OnLoginError() {
-
+        logoutMeathod();
     }
 
     @Override
@@ -111,6 +118,30 @@ TextView noRecard;
     public void onItemClicked(String pollId,String requestId,int position) {
         //Toast.makeText(getActivity(), "hello", Toast.LENGTH_SHORT).show();
         getRequestedPullPresenterImplementer.actionOnRequestedPoll(pollId,requestId,position);
+
+    }
+
+    public  void logoutMeathod()
+    {
+
+        String refreshedToken = sharedPreferences.getString(SharedPreferenceConstants.fcmId, "");
+
+        final SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(SharedPreferenceConstants.email, "");
+        editor.putString(SharedPreferenceConstants.name, "");
+        editor.putString(SharedPreferenceConstants.serviceKey, "");
+        editor.putString(SharedPreferenceConstants.userId, "");
+        editor.putString(SharedPreferenceConstants.homeCity, "");
+        editor.putString(SharedPreferenceConstants.workCity, "");
+        editor.putString(SharedPreferenceConstants.mobile, "");
+        editor.putString(SharedPreferenceConstants.checkPoll, "");
+        editor.clear();
+        editor.commit();
+        sharedPreferences.edit().putString(SharedPreferenceConstants.fcmId, refreshedToken).apply();
+        Intent i1 = new Intent();
+        i1.setClassName("com.bantu.lift.driver", "com.bantu.lift.driver.activity.LoginActivity");
+        i1.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(i1);
 
     }
 }

@@ -68,8 +68,8 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 PendingIntent.FLAG_UPDATE_CURRENT);
         builder.setContentIntent(contentIntent);
 
-        NotificationUtils notificationUtils = new NotificationUtils(getApplicationContext());
-        notificationUtils.playNotificationSound();
+       // NotificationUtils notificationUtils = new NotificationUtils(getApplicationContext());
+       // notificationUtils.playNotificationSound();
         // Add as notification
         NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         manager.notify(0, builder.build());

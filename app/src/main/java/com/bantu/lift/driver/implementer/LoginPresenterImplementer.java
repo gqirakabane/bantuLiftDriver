@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.bantu.lift.driver.BuildConfig;
 import com.bantu.lift.driver.MainActivity;
 import com.bantu.lift.driver.R;
 import com.bantu.lift.driver.activity.ForgotPasswordScreen;
@@ -63,12 +64,14 @@ public class LoginPresenterImplementer implements ILoginPresenter {
                         FunctionHelper.dismissDialog();
                         int status_val = Integer.parseInt(response.body().getErrorCode());
                         if (status_val == 0) {
+                            Integer buildVersion= BuildConfig.VERSION_CODE;
                             sharedPreferences.edit().putString(SharedPreferenceConstants.userId, response.body().getData().getUserId()).apply();
                             sharedPreferences.edit().putString(SharedPreferenceConstants.email, response.body().getData().getEmail()).apply();
                             sharedPreferences.edit().putString(SharedPreferenceConstants.mobile, response.body().getData().getMobile()).apply();
                             sharedPreferences.edit().putString(SharedPreferenceConstants.serviceKey, response.body().getServiceKey()).apply();
                             sharedPreferences.edit().putString(SharedPreferenceConstants.name, response.body().getData().getName()).apply();
                             sharedPreferences.edit().putString(SharedPreferenceConstants.image, response.body().getData().getImage()).apply();
+                            sharedPreferences.edit().putInt(SharedPreferenceConstants.buildVersion,buildVersion).apply();
 
                             Toast.makeText(context, response.body().getErrorMsg(), Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(context, MainActivity.class);

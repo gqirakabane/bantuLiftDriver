@@ -18,5 +18,6 @@ public class SharedPreferenceConstants {
     public static final String fcm_reg_id = "fcm_reg_id";
     public static final String checkPoll = "checkPoll";
     public static final String fcmId = "fcmId";
+    public static final String buildVersion = "buildVersion";
 
 }
